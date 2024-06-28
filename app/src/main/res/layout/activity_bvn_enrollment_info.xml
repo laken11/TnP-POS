@@ -1,0 +1,264 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bvn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/enrollment">
+
+    <RelativeLayout
+        android:id="@+id/button_ligh"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/button_ligh">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:background="@drawable/button_ligh"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="19dp"
+            android:src="@drawable/arrow_left"
+            android:contentDescription="@string/back_icon" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/frame_26"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:id="@+id/frame_16"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/frame_16" />
+
+        <RelativeLayout
+            android:id="@+id/frame_23"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:layout_marginStart="11dp"
+            android:background="@drawable/frame_16" />
+
+        <RelativeLayout
+            android:id="@+id/frame_21"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:layout_marginStart="11dp"
+            android:background="@drawable/frame_23" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/enroll_usin"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="165dp"
+        android:layout_marginEnd="29dp"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/info_message"
+        android:textAlignment="center"
+        android:textAppearance="@style/info_message" />
+
+    <RelativeLayout
+        android:id="@+id/enrollment_det"
+        android:layout_width="350dp"
+        android:layout_height="194dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="252dp"
+        android:background="@drawable/enrollment_details"
+        android:elevation="24dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+
+        <TextView
+            android:id="@+id/full_name"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginBottom="148dp"
+            android:gravity="top"
+            android:lineSpacingExtra="0sp"
+            android:text="@string/full_name_text"
+            android:textAppearance="@style/full_name_text"
+            android:translationY="-0.15sp" />
+
+        <TextView
+            android:id="@+id/full_name_text"
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="148dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="0sp"
+            android:text=""
+            android:textAppearance="@style/name_text"
+            android:translationY="-0.15sp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/date_of_birth"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="121dp"
+            android:gravity="top"
+            android:lineSpacingExtra="0sp"
+            android:text="@string/date_of_birth"
+            android:textAppearance="@style/date_of_birth"
+            android:translationY="-0.15sp" />
+
+        <TextView
+            android:id="@+id/date_of_birth_text"
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="121dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="0sp"
+            android:text=""
+            android:textAppearance="@style/date_of_birth_text"
+            android:translationY="-0.15sp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/phone_number"
+            android:layout_width="163dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="41dp"
+            android:gravity="top"
+            android:lineSpacingExtra="0sp"
+            android:text="@string/phone_number"
+            android:textAppearance="@style/phone_number"
+            android:translationY="-0.15sp" />
+
+        <TextView
+            android:id="@+id/phone_number_text"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="41dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="0sp"
+            android:text=""
+            android:textAppearance="@style/phone_number_text"
+            android:translationY="-0.15sp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="164dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginBottom="68dp"
+            android:gravity="top"
+            android:lineSpacingExtra="0sp"
+            android:text="@string/address"
+            android:textAppearance="@style/address"
+            android:translationY="-0.15sp" />
+
+        <TextView
+            android:id="@+id/address_text"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="68dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="0sp"
+            android:text=""
+            android:textAppearance="@style/address_text"
+            android:translationY="-0.15sp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="164dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="94dp"
+            android:gravity="top"
+            android:lineSpacingExtra="0sp"
+            android:text="@string/email"
+            android:textAppearance="@style/email"
+            android:translationY="-0.15sp" />
+
+        <TextView
+            android:id="@+id/email_text"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="9dp"
+            android:layout_marginBottom="94dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="0sp"
+            android:text=""
+            android:textAppearance="@style/email_text"
+            android:translationY="-0.15sp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/proceed_btn"
+        android:layout_width="350dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="37dp"
+        android:backgroundTint="@color/red"
+        android:gravity="center"
+        android:textAppearance="@style/proceed"
+        android:text="@string/confirm_details"
+        android:textSize="18sp" />
+
+</RelativeLayout>

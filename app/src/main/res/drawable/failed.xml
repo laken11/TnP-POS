@@ -1,0 +1,25 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#f5f5f5" /> <!-- Light background color -->
+        </shape>
+    </item>
+    <item android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="#d32f2f" /> <!-- Red color for the circle -->
+            <size android:width="60dp" android:height="60dp" />
+        </shape>
+    </item>
+    <item android:gravity="center">
+        <vector
+            android:width="50dp"
+            android:height="50dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="#ffffff"
+                android:pathData="M15,9L13.41,7.41 12,8.83 10.59,7.41 9,9l1.41,1.41L9,12l1.41,1.41L12,12.17l1.41,1.41L15,12l-1.41-1.41L15,9z"/>
+        </vector>
+    </item>
+</layer-list>
+

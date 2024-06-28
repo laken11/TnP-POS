@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bvn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/enrollment">
+
+    <RelativeLayout
+        android:id="@+id/button_ligh"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/button_ligh">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="19dp"
+            android:background="@drawable/button_ligh"
+            android:contentDescription="@string/back_icon"
+            android:src="@drawable/arrow_left" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/frame_26"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="5dp"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/frame_16"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/frame_16" />
+
+        <RelativeLayout
+            android:id="@+id/frame_23"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:background="@drawable/frame_16" />
+
+        <RelativeLayout
+            android:id="@+id/frame_21"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:background="@drawable/frame_16" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerVertical="true"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/account_details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/enroll_usin"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="30dp"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/choose_link"
+        android:textAlignment="center"
+        android:textAppearance="@style/info_message" />
+
+
+    <Button
+        android:id="@+id/proceed_btn"
+        android:layout_width="350dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="37dp"
+        android:backgroundTint="@color/red"
+        android:gravity="center"
+        android:text="@string/link_accounts"
+        android:textAppearance="@style/proceed"
+        android:textSize="18sp" />
+
+</RelativeLayout>

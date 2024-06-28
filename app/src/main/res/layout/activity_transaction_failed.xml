@@ -1,0 +1,100 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/enrollment_"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/enrollment"
+    tools:targetApi="s">
+
+    <RelativeLayout
+        android:id="@+id/frame_28"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/enrollment"
+        android:clipToOutline="true">
+
+        <ImageView
+            android:id="@+id/dashed_border"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:contentDescription=""
+            android:src="@drawable/dashed_border" />
+
+        <ImageView
+            android:id="@+id/circle_with_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/failed" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/transaction"
+        android:layout_width="259dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/frame_28"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="70dp"
+        android:lineSpacingExtra="3sp"
+        android:text="Transaction Failed"
+        android:textAlignment="center"
+        android:textAppearance="@style/transaction_successful" />
+
+    <TextView
+        android:id="@+id/failed_message_1"
+        android:layout_width="352dp"
+        android:layout_height="66dp"
+        android:layout_alignTop="@+id/transaction"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="18dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/failed_message_1"
+        android:textAppearance="@style/failed_message_1" />
+
+    <TextView
+        android:id="@+id/failed_message_2"
+        android:layout_width="352dp"
+        android:layout_height="66dp"
+        android:layout_above="@+id/back_to_home"
+        android:layout_below="@+id/failed_message_1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="151dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/failed_message_2"
+        android:textAppearance="@style/failed_message_2" />
+
+    <Button
+        android:id="@+id/back_to_home"
+        android:layout_width="350dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="23dp"
+        android:backgroundTint="@color/red"
+        android:gravity="center"
+        android:text="@string/try_again"
+        android:textAppearance="@style/proceed"
+        android:textSize="18sp" />
+
+</RelativeLayout>

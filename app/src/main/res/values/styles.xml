@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="pin">
+        <item name="android:textSize">36sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item> <!-- Make text bold -->
+    </style>
+
+    <style name="thumb">
+        <item name="android:textSize">32sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item> <!-- Make text bold -->
+    </style>
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/red</item>
+        <item name="colorAccent">@color/black</item>
+    </style>
+
+    <!-- Custom button style -->
+    <style name="CustomButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/frame_action_btn</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+
+    <style name="welcome_text">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="enrollment">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#F8F8F8</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="transaction">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#F8F8F8</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="action_message">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="nin">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="choose_enro">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="bvn">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="atm_card">
+    <item name="android:textSize">16sp</item>
+    <item name="android:letterSpacing">-0.01</item>
+    <item name="android:textColor">#3A3A3A</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="welcome">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#2B2B2B</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="login_message">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#555555</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="enroll_usin">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="enter_bvn">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="proceed">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="verify_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="progress">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="finger_scan_message">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+    <style name="info_message">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="name_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="full_name_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="date_of_birth">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="date_of_birth_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="email">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="email_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="phone_number">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="phone_number_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="address">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="address_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="acc_number">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="bank_name_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="account_type">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="enrollment_success_text">
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="enrollment_congrats">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="enrollment_number">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="virtual_acc">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="account_name">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="account_name_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="account_number">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="bank_name">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="account_number_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="card_instruction">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="card_name">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="card_name_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="card_number">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="card_number_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="card_type">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="card_type_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="expiry">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="expiry_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="review_tran">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="amount">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="amount_value">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="selected_account">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="change">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="amount_payed">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="transaction_successful">
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="transaction_details">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="transaction_type">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6C6B68</item>
+    </style>
+
+    <style name="share_receipt">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#B40A08</item>
+    </style>
+
+    <style name="failed_message_1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="failed_message_2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#B40A08</item>
+    </style>
+
+
+
+</resources>

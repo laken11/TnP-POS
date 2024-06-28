@@ -1,0 +1,201 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/enrollment">
+
+    <RelativeLayout
+        android:id="@+id/button_ligh"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/button_ligh">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:background="@drawable/button_ligh"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="19dp"
+            android:src="@drawable/arrow_left"
+            android:contentDescription="@string/back_icon" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/enroll_usin"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="127dp"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/transaction_amount_display"
+        android:textAppearance="@style/enroll_usin" />
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/frame_22_"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="11dp"
+        android:text="@string/account_number_"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/frame_22_"
+        android:layout_width="380dp"
+        android:layout_height="58dp"
+        android:layout_above="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="27dp"
+        android:background="@drawable/frame_22"
+        tools:ignore="UselessParent">
+
+        <EditText
+            android:id="@+id/acc_number_value"
+            android:layout_width="295dp"
+            android:layout_height="47dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="6dp"
+            android:autofillHints=""
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:textAppearance="@style/enter_bvn" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/frame_22"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/enter_amount"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/frame_22"
+        android:layout_width="380dp"
+        android:layout_height="58dp"
+        android:layout_above="@+id/frame_card_pin"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="63dp"
+        android:background="@drawable/frame_22"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/vuesax_line"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="17dp"
+            android:text="#"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/bvn"
+            android:layout_width="295dp"
+            android:layout_height="47dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="6dp"
+            android:layout_toEndOf="@+id/vuesax_line"
+            android:autofillHints=""
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:hint="@string/amount_display"
+            android:inputType="numberDecimal"
+            android:textAppearance="@style/enter_bvn" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/enter_car_pin"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/frame_card_pin"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/enter_card_pin"
+        android:visibility="invisible"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/frame_card_pin"
+        android:layout_width="380dp"
+        android:layout_height="58dp"
+        android:layout_above="@+id/proceed_btn"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="57dp"
+        android:background="@drawable/frame_22"
+        android:visibility="invisible"
+        tools:ignore="UselessParent">
+
+        <EditText
+            android:id="@+id/card_pin"
+            android:layout_width="351dp"
+            android:layout_height="44dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="9dp"
+            android:autofillHints=""
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:textAppearance="@style/enter_bvn" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/proceed_btn"
+        android:layout_width="380dp"
+        android:layout_height="63dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="90dp"
+        android:backgroundTint="@color/red"
+        android:clickable="false"
+        android:text="@string/next"
+        android:textAppearance="@style/proceed" />
+
+
+</RelativeLayout>

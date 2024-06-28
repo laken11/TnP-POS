@@ -1,0 +1,364 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/enrollment_"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/enrollment"
+    tools:targetApi="s">
+
+
+    <RelativeLayout
+        android:id="@+id/header_card"
+        android:layout_width="350dp"
+        android:layout_height="181dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="31dp"
+        android:background="@drawable/receipt"
+        android:clipToOutline="true"
+        android:elevation="24dp">
+
+        <RelativeLayout
+            android:id="@+id/frame_28"
+            android:layout_width="96dp"
+            android:layout_height="84dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="129dp"
+            android:background="@drawable/enrollment"
+            android:clipToOutline="true">
+
+            <ImageView
+                android:id="@+id/dashed_border"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/receipt"
+                android:contentDescription=""
+                android:src="@drawable/dashed_border" />
+
+            <ImageView
+                android:id="@+id/circle_with_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/circle_with_check" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/payment_of_"
+            android:layout_width="341dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="50dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/payment_confirmed"
+            android:textAppearance="@style/amount_payed" />
+
+        <TextView
+            android:id="@+id/some_id"
+            android:layout_width="132dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="109dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="-1sp"
+            android:text=""
+            android:textAppearance="@style/amount_value" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/receipt_bac"
+        android:layout_width="350dp"
+        android:layout_height="279dp"
+        android:layout_above="@+id/back_to_home"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="261dp"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/receipt">
+
+        <RelativeLayout
+            android:id="@+id/detalis_hea"
+            android:layout_width="314dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="33dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="-2dp"
+                android:src="@drawable/arrow_up" />
+
+            <TextView
+                android:id="@+id/trans"
+                android:layout_width="274dp"
+                android:layout_height="24dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/transaction"
+                android:textAppearance="@style/transaction_details"
+                android:translationY="-1.11sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/transaction_type"
+            android:layout_width="314dp"
+            android:layout_height="24dp"
+            android:layout_alignBottom="@+id/detalis_hea"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginBottom="-41dp">
+
+            <TextView
+                android:id="@+id/transaction_type_text"
+                android:layout_width="167dp"
+                android:layout_height="24dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/transaction_type"
+                android:textAppearance="@style/transaction_type"
+                android:translationY="-1.11sp" />
+
+            <TextView
+                android:id="@+id/transaction_type_value"
+                android:layout_width="146dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="-1dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text=""
+                android:textAppearance="@style/transaction_details"
+                android:translationY="-1.11sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/transaction_ref"
+            android:layout_width="314dp"
+            android:layout_height="24dp"
+            android:layout_alignBottom="@+id/transaction_type"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginBottom="-35dp">
+
+            <TextView
+                android:id="@+id/transaction_ref_text"
+                android:layout_width="167dp"
+                android:layout_height="24dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/transaction_ref"
+                android:textAppearance="@style/transaction_type"
+                android:translationY="-1.11sp" />
+
+            <TextView
+                android:id="@+id/transaction_ref_value"
+                android:layout_width="146dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="-1dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text=""
+                android:textAppearance="@style/transaction_details"
+                android:translationY="-1.11sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/payment_status"
+            android:layout_width="314dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginBottom="113dp">
+
+            <TextView
+                android:id="@+id/payment_status_text"
+                android:layout_width="167dp"
+                android:layout_height="24dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/payment_status"
+                android:textAppearance="@style/transaction_type"
+                android:translationY="-1.11sp" />
+
+            <TextView
+                android:id="@+id/payment_status_value"
+                android:layout_width="146dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="-1dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text=""
+                android:textAppearance="@style/transaction_details"
+                android:translationY="-1.11sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/payment_time"
+            android:layout_width="314dp"
+            android:layout_height="24dp"
+            android:layout_alignTop="@+id/payment_status"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="33dp">
+
+            <TextView
+                android:id="@+id/payment_time_text"
+                android:layout_width="172dp"
+                android:layout_height="24dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/payment_time"
+                android:textAppearance="@style/transaction_type"
+                android:translationY="-1.11sp" />
+
+            <TextView
+                android:id="@+id/payment_time_value"
+                android:layout_width="146dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="-1dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text=""
+                android:textAppearance="@style/transaction_details"
+                android:translationY="-1.11sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/payment_total"
+            android:layout_width="314dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/payment_total_text"
+                android:layout_width="170dp"
+                android:layout_height="24dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/payment_total"
+                android:textAppearance="@style/transaction_type"
+                android:translationY="-1.11sp" />
+
+            <TextView
+                android:id="@+id/payment_total_value"
+                android:layout_width="146dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="-1dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text=""
+                android:textAppearance="@style/transaction_details"
+                android:translationY="-1.11sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/share_receipt"
+        android:layout_width="165dp"
+        android:layout_height="58dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="578dp"
+        android:background="@drawable/share">
+
+        <TextView
+            android:id="@+id/share_receipt_text"
+            android:layout_width="120dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="18dp"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/share_receipt"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textAppearance="@style/share_receipt" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/generate_receipt"
+        android:layout_width="165dp"
+        android:layout_height="58dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="205dp"
+        android:layout_marginTop="578dp"
+        android:background="@drawable/share">
+
+        <TextView
+            android:id="@+id/generate_receipt_text"
+            android:layout_width="163dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="17dp"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/generate_receipt"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textAppearance="@style/share_receipt" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/back_to_home"
+        android:layout_width="350dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="23dp"
+        android:backgroundTint="@color/red"
+        android:gravity="center"
+        android:text="@string/done"
+        android:textAppearance="@style/proceed"
+        android:textSize="18sp" />
+
+</RelativeLayout>

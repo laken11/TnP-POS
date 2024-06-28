@@ -1,0 +1,143 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bvn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/enrollment">
+
+    <RelativeLayout
+        android:id="@+id/button_ligh"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/button_ligh">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:background="@drawable/button_ligh"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="19dp"
+            android:src="@drawable/arrow_left"
+            android:contentDescription="@string/back_icon" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/frame_26"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:id="@+id/frame_16"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/frame_16" />
+
+        <RelativeLayout
+            android:id="@+id/frame_23"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:layout_marginStart="11dp"
+            android:background="@drawable/frame_16" />
+
+        <RelativeLayout
+            android:id="@+id/frame_21"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:layout_marginStart="11dp"
+            android:background="@drawable/frame_23" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/enroll_usin"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="164dp"
+        android:text="@string/verify_text"
+        android:textAppearance="@style/verify_text"
+        android:lineSpacingExtra="2sp"
+        android:textAlignment="center" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@+id/enroll_usin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="105dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-4dp">
+
+        <TextView
+            android:id="@+id/progress"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="61dp"
+            android:layout_marginBottom="18dp"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/progress"
+            android:textAlignment="center"
+            android:textAppearance="@style/progress" />
+
+        <ImageView
+            android:id="@+id/progress_mark"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="14dp"
+            android:contentDescription=""
+            android:src="@drawable/tick_circle"
+            android:visibility="invisible" />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/fingerprint_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="324dp"
+        android:background="@drawable/fingerprint_frame"
+        android:layout_centerHorizontal="true"
+        android:contentDescription=""
+        android:src="@drawable/fingerprint_scan" />
+
+    <TextView
+        android:id="@+id/scan_your_f"
+        android:layout_width="253dp"
+        android:layout_height="21dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="591dp"
+        android:text="@string/finger_scan_message"
+        android:textAppearance="@style/finger_scan_message"
+        android:lineSpacingExtra="2sp"
+        android:gravity="center_vertical"/>
+</RelativeLayout>

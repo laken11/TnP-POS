@@ -1,0 +1,176 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bvn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/enrollment">
+
+    <RelativeLayout
+        android:id="@+id/button_ligh"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/button_ligh">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="19dp"
+            android:background="@drawable/button_ligh"
+            android:contentDescription="@string/back_icon"
+            android:src="@drawable/arrow_left" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/review_tran"
+        android:layout_width="204dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="103dp"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/review_transaction_details"
+        android:textAppearance="@style/review_tran" />
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/frame_32"
+        android:layout_width="201dp"
+        android:layout_height="83dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="220dp"
+        android:clipToOutline="true"
+        android:background="@drawable/frame_23">
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="53dp"
+            android:layout_height="21dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:text="Amount"
+            android:textAppearance="@style/amount"
+            android:lineSpacingExtra="2sp"
+            android:gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/some_id"
+            android:layout_width="119dp"
+            android:layout_height="48dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textAppearance="@style/amount_value"
+            android:lineSpacingExtra="4sp"
+            android:gravity="center_vertical"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/frame_57"
+        android:layout_width="350dp"
+        android:layout_height="135dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="375dp">
+        <TextView
+            android:id="@+id/selected_ac"
+            android:layout_width="133dp"
+            android:layout_height="24dp"
+            android:text="@string/linked_card"
+            android:textAppearance="@style/selected_account"
+            android:lineSpacingExtra="2sp"
+            android:gravity="center_vertical"
+            />
+        <RelativeLayout
+            android:id="@+id/frame_12"
+            android:layout_width="322.46dp"
+            android:layout_height="64dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <View
+                android:id="@+id/nigeria_uni"
+                android:layout_width="24dp"
+                android:layout_height="24.05dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/card" />
+
+            <RelativeLayout
+                android:id="@+id/frame_27"
+                android:layout_width="241dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:id="@+id/card_holder_name"
+                    android:layout_width="227dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="2sp"
+                    android:text=""
+                    android:textAppearance="@style/acc_number" />
+
+                <TextView
+                    android:id="@+id/card_number"
+                    android:layout_width="229dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="22dp"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="2sp"
+                    android:text=""
+                    android:textAppearance="@style/bank_name_text" />
+
+                <TextView
+                    android:id="@+id/expiry"
+                    android:layout_width="83dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="2sp"
+                    android:text=""
+                    android:textAppearance="@style/account_type" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/proceed_btn"
+        android:layout_width="350dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="37dp"
+        android:backgroundTint="@color/red"
+        android:gravity="center"
+        android:text="@string/confirm"
+        android:textAppearance="@style/proceed"
+        android:textSize="18sp" />
+
+</RelativeLayout>

@@ -1,0 +1,132 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/enrollment_"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/enrollment"
+    tools:targetApi="s">
+
+    <RelativeLayout
+        android:id="@+id/frame_28"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_above="@+id/enrollment_success_text"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/enrollment"
+        android:clipToOutline="true">
+
+        <ImageView
+            android:id="@+id/dashed_border"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:contentDescription=""
+            android:src="@drawable/dashed_border">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/circle_with_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/circle_with_check" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/enrollment_success_text"
+        android:layout_width="333dp"
+        android:layout_height="49dp"
+        android:layout_above="@+id/enrollment_congrats"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="28dp"
+        android:lineSpacingExtra="3sp"
+        android:text="@string/enrollment_success_text"
+        android:textAlignment="center"
+        android:textAppearance="@style/enrollment_success_text" />
+
+    <TextView
+        android:id="@+id/enrollment_congrats"
+        android:layout_width="341dp"
+        android:layout_height="48dp"
+        android:layout_above="@+id/frame_22"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/enrollment_congrats"
+        android:textAppearance="@style/enrollment_congrats" />
+
+    <RelativeLayout
+        android:id="@+id/frame_22"
+        android:layout_width="318dp"
+        android:layout_height="58dp"
+        android:layout_above="@+id/back_to_home"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="54dp"
+        android:background="@drawable/frame_enrollment_number">
+
+        <TextView
+            android:id="@+id/enrollment_number"
+            android:layout_width="255dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="13dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="2sp"
+            android:text=""
+            android:textAppearance="@style/enrollment_number" />
+
+        <ImageButton
+            android:id="@+id/copy"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="18dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/copy" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/back_to_home"
+        android:layout_width="350dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="37dp"
+        android:backgroundTint="@color/red"
+        android:gravity="center"
+        android:text="@string/go_to_home"
+        android:textAppearance="@style/proceed"
+        android:textSize="18sp" />
+
+</RelativeLayout>

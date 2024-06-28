@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/enrollment_"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/enrollment">
+    <RelativeLayout
+        android:id="@+id/button_ligh"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
+        android:clipToOutline="true"
+        android:background="@drawable/button_ligh">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:background="@drawable/button_ligh"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="19dp"
+            android:src="@drawable/arrow_left"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/frame_15"
+        android:layout_width="350dp"
+        android:layout_height="254dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="132dp">
+        <!-- Auto layout, variables, and unit scale are not yet supported -->
+        <RelativeLayout
+            android:id="@+id/text"
+            android:layout_width="208dp"
+            android:layout_height="24dp">
+            <TextView
+                android:id="@+id/choose_enro"
+                android:layout_width="208dp"
+                android:layout_height="24dp"
+                android:text="@string/choose_enro"
+                android:textAppearance="@style/choose_enro"
+                android:lineSpacingExtra="2sp"
+                android:gravity="center_vertical"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/frame_14"
+            android:layout_width="350dp"
+            android:layout_height="206dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp">
+
+            <RelativeLayout
+                android:id="@+id/frame_10"
+                android:layout_width="350dp"
+                android:layout_height="58dp"
+                android:background="@drawable/frame_10"
+                android:clipToOutline="true"
+                android:elevation="15dp">
+
+                <!-- Auto layout, variables, and unit scale are not yet supported -->
+                <RelativeLayout
+                    android:id="@+id/frame_12"
+                    android:layout_width="318dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="11dp">
+
+                    <!-- Auto layout, variables, and unit scale are not yet supported -->
+                    <RelativeLayout
+                        android:id="@+id/frame_11"
+                        android:layout_width="78dp"
+                        android:layout_height="36dp">
+
+                        <RelativeLayout
+                            android:id="@+id/mage_id_car"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/mage_id_car">
+
+                            <ImageView
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:src="@drawable/group" />
+                        </RelativeLayout>
+                        <!-- Auto layout, variables, and unit scale are not yet supported -->
+
+                        <TextView
+                            android:id="@+id/nin"
+                            android:layout_width="30dp"
+                            android:layout_height="32dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="6dp"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="10sp"
+                            android:text="@string/nin"
+                            android:textAppearance="@style/nin" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/nin_enrollment_action"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:clickable="true"
+                        android:src="@drawable/arrow_right"
+                        android:focusable="true" />
+
+                    <!-- Auto layout, variables, and unit scale are not yet supported -->
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/frame_bvn"
+                android:layout_width="350dp"
+                android:layout_height="58dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="79dp"
+                android:background="@drawable/frame_10"
+                android:clipToOutline="true"
+                android:elevation="15dp">
+                <!-- Auto layout, variables, and unit scale are not yet supported -->
+                <RelativeLayout
+                    android:id="@+id/frame_bvn_12"
+                    android:layout_width="318dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="11dp">
+                    <!-- Auto layout, variables, and unit scale are not yet supported -->
+                    <RelativeLayout
+                        android:id="@+id/frame_bvn_11"
+                        android:layout_width="85.46dp"
+                        android:layout_height="36dp">
+                        <RelativeLayout
+                            android:id="@+id/mage_id_bvn_car"
+                            android:layout_width="40.46dp"
+                            android:layout_height="36dp"
+                            android:clipToOutline="true"
+                            android:background="@drawable/mage_id_car">
+                            <!-- Auto layout, variables, and unit scale are not yet supported -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/security_user" />
+                        </RelativeLayout>
+
+                        <!-- Auto layout, variables, and unit scale are not yet supported -->
+                        <RelativeLayout
+                            android:id="@+id/text_bvn"
+                            android:layout_width="33dp"
+                            android:layout_height="32dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="6dp">
+
+                            <TextView
+                                android:id="@+id/bvn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center_vertical"
+                                android:lineSpacingExtra="10sp"
+                                android:text="@string/bvn"
+                                android:textAppearance="@style/bvn" />
+                        </RelativeLayout>
+
+                        <!-- Auto layout, variables, and unit scale are not yet supported -->
+
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/bvn_enrollment_action"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginBottom="5dp"
+                        android:clickable="true"
+                        android:src="@drawable/arrow_right"
+                        android:focusable="true" />
+                    <!-- Auto layout, variables, and unit scale are not yet supported -->
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/frame_card"
+                android:layout_width="350dp"
+                android:layout_height="58dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/frame_10"
+                android:clipToOutline="true"
+                android:elevation="15dp">
+                <!-- Auto layout, variables, and unit scale are not yet supported -->
+                <RelativeLayout
+                    android:id="@+id/frame_card_12"
+                    android:layout_width="318dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="11dp">
+                    <!-- Auto layout, variables, and unit scale are not yet supported -->
+                    <RelativeLayout
+                        android:id="@+id/frame_card_11"
+                        android:layout_width="126.46dp"
+                        android:layout_height="36dp">
+
+                        <RelativeLayout
+                            android:id="@+id/mage_id_card__car"
+                            android:layout_width="40.46dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/mage_id_car"
+                            android:clipToOutline="true">
+                            <!-- Auto layout, variables, and unit scale are not yet supported -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="0dp"
+                                android:src="@drawable/card" />
+                        </RelativeLayout>
+                        <!-- Auto layout, variables, and unit scale are not yet supported -->
+                        <TextView
+                            android:id="@+id/atm_card"
+                            android:layout_width="74dp"
+                            android:layout_height="32dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="2dp"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="10sp"
+                            android:text="@string/atm_card"
+                            android:textAppearance="@style/atm_card" />
+                        <!-- Auto layout, variables, and unit scale are not yet supported -->
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/arrow_right"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="6dp" >
+
+                        <ImageView
+                            android:id="@+id/card_enrollment_action"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:clickable="true"
+                            android:src="@drawable/arrow_right"
+                            android:focusable="true" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
