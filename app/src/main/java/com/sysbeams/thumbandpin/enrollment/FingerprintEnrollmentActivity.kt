@@ -36,6 +36,7 @@ import com.suprema.util.Logger
 import com.sysbeams.thumbandpin.R
 import com.sysbeams.thumbandpin.SharedPreferencesHelper
 import com.sysbeams.thumbandpin.api.models.UserEnrollmentDto
+import com.sysbeams.thumbandpin.enrollment.card.CardEnrollmentInfoActivity
 import com.telpo.tps550.api.fingerprint.FingerPrint
 
 
@@ -270,9 +271,21 @@ class FingerprintEnrollmentActivity: ComponentActivity() {
                 captureDone()
                 Handler(Looper.getMainLooper()).postDelayed({
                     val activity = intent.getStringExtra("activity").toString()
-                    val intent = Intent(this@FingerprintEnrollmentActivity, EnrollmentInfoActivity::class.java)
-                    intent.putExtra("id", mBVNorNIN).putExtra("activity", activity)
-                    startActivity(intent)
+                    if(activity == "cardEnrollment"){
+                        val intent = Intent(this@FingerprintEnrollmentActivity, CardEnrollmentInfoActivity::class.java)
+                        val cardNum = this.intent.getStringExtra("cardNum").toString()
+                        val expiry = this.intent.getStringExtra("expiry").toString()
+                        val cardHolderName = this.intent.getStringExtra("cardHolderName").toString()
+                        intent.putExtra("cardNum", cardNum)
+                            .putExtra("expiry", expiry)
+                            .putExtra("cardHolderName", cardHolderName)
+                            .putExtra("id", mBVNorNIN)
+                        startActivity(intent)
+                    }else{
+                        val intent = Intent(this@FingerprintEnrollmentActivity, EnrollmentInfoActivity::class.java)
+                        intent.putExtra("id", mBVNorNIN).putExtra("activity", activity)
+                        startActivity(intent)
+                    }
                 },3000)
             }
             else{

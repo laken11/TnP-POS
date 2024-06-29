@@ -1,10 +1,14 @@
 package com.sysbeams.thumbandpin.enrollment.card
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.Gravity
 import android.widget.EditText
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AlertDialog
@@ -23,6 +27,8 @@ import com.telpo.emv.EmvPinData
 import com.telpo.emv.EmvService
 import com.telpo.emv.EmvServiceListener
 import com.telpo.emv.EmvTLV
+import com.telpo.util.DefaultAPPCAPK
+import com.telpo.util.ErrMsg
 import com.telpo.util.StringUtil
 import java.io.UnsupportedEncodingException
 import java.text.SimpleDateFormat
@@ -103,6 +109,8 @@ class CardEnrollmentActivity: ComponentActivity() {
     //PIN format（Des：0、1、3；Aes：4）
     //PAN
     var cardNum = ""
+    var expiry = ""
+    var cardHolderName = ""
 
     //Is online transaction or not
     var isOnlineTransaction = true
@@ -138,17 +146,42 @@ class CardEnrollmentActivity: ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_card_enrollment)
 
-        InitPinPad();
-
         val builder = MaterialAlertDialogBuilder(this)
         panDialog = builder.setTitle("Please Input PIN")
             .setCancelable(false)
             .create()
 
+        InitPinPad()
+        WriteKey()
         //Init the EmvService
         emvService = EmvService.getInstance()
         STATUS = EmvService.Open(this)
+        EmvService.Emv_RemoveAllApp()
+        EmvService.Emv_RemoveAllCapk()
+        DefaultAPPCAPK.Add_All_APP(emvService)
+        DefaultAPPCAPK.Add_Default_APP(emvService)
+        DefaultAPPCAPK.Add_Amex_AID(emvService)
+        DefaultAPPCAPK.Add_Mir_AID(emvService)
+        DefaultAPPCAPK.Add_Rupay_AID(emvService)
+        DefaultAPPCAPK.Add_QTransit_AID(emvService)
+        DefaultAPPCAPK.Add_All_CAPK(emvService)
+        DefaultAPPCAPK.Add_All_CAPK_Test(emvService)
+        DefaultAPPCAPK.Add_Default_CAPK(emvService)
+        DefaultAPPCAPK.Add_Amex_Capk(emvService)
+        DefaultAPPCAPK.Add_Mir_Capk(emvService)
+        DefaultAPPCAPK.Add_Rupay_Capk(emvService)
+        DefaultAPPCAPK.Add_QTransit_Capk(emvService)
         if(EmvService.EMV_DEVICE_TRUE == EmvService.deviceOpen()){
+            STATUS = EmvService.IccOpenReader()
+            if(EmvService.EMV_DEVICE_TRUE == STATUS){
+                startDetect()
+            }
+        }
+
+    }
+
+    inner class CardThread: Runnable {
+        override fun run() {
             STATUS = EmvService.IccOpenReader()
             if(EmvService.EMV_DEVICE_TRUE == STATUS){
                 IS_READ = EmvService.IccCheckCard(300) == EmvService.EMV_DEVICE_TRUE
@@ -157,17 +190,200 @@ class CardEnrollmentActivity: ComponentActivity() {
                     emvService.setListener(cardListener)
                     startIcTransaction()
                     EmvService.IccCard_Poweroff()
-                    Toast.makeText(this@CardEnrollmentActivity, "Card Read: ${cardNum}", Toast.LENGTH_LONG).show()
-                } else {
-                    Toast.makeText(this@CardEnrollmentActivity, "No card detected.", Toast.LENGTH_LONG).show()
                 }
             }
         }
     }
 
+    private fun startDetect() {
+        val posFrame = findViewById<RelativeLayout>(R.id.pos_frame)
+        Handler(Looper.getMainLooper()).postDelayed({
+            Toast.makeText(this, "Please Insert your debit card", Toast.LENGTH_LONG).show()
+            val cardThread  = CardThread()
+            val thread = Thread(cardThread)
+            thread.start()
+        }, 3000)
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            if(cardNum.isEmpty() || expiry.isEmpty()){
+                Toast.makeText(this, "Unable to read card, please tap on the pos frame to try again", Toast.LENGTH_LONG).show()
+                posFrame.isClickable = true
+                posFrame.setOnClickListener {
+                    startDetect()
+                }
+            }else{
+                val intent = Intent(this, CardBvnEnrollmentActivity::class.java)
+                intent.putExtra("cardNum", cardNum)
+                intent.putExtra("expiry", expiry)
+                intent.putExtra("cardHolderName", cardHolderName)
+                startActivity(intent)
+            }
+        }, 10000)
+
+    }
+
+    private fun formatDateString(input: String): String {
+        if (input.length == 4) {
+            val month = input.substring(0, 2)
+            val year = input.substring(2, 4)
+            return "$month/$year"
+        } else {
+            throw IllegalArgumentException("Input string must be exactly 4 characters long")
+        }
+    }
+
     fun InitPinPad(): Int {
-        pinpadService = PinpadService(context)
-        return pinpadService.Pinpad_Open(context)
+        pinpadService = PinpadService(this)
+        return pinpadService.Pinpad_Open(this)
+    }
+
+    fun WriteKey(): Int {
+        val MasterKey = byteArrayOf(
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11,
+            0x11
+        )
+        val PinKey = byteArrayOf(
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22,
+            0x22
+        )
+        val MacKey = byteArrayOf(
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33,
+            0x33
+        )
+        val PanKey = byteArrayOf(
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44,
+            0x44
+        )
+        _LastCode = saveMasterKey(MasterKey)
+        if (PinpadService.PIN_OK != _LastCode) {
+            return _LastCode
+        }
+        _LastCode = savePinKey(PinKey)
+        if (PinpadService.PIN_OK != _LastCode) {
+            return _LastCode
+        }
+        _LastCode = saveMacKey(MacKey)
+        if (PinpadService.PIN_OK != _LastCode) {
+            return _LastCode
+        }
+        _LastCode = savePanKey(PanKey)
+        return _LastCode
+    }
+
+    private fun saveMasterKey(masterKey: ByteArray): Int {
+        return pinpadService.Pinpad_Write_Normal_Key(
+            0,
+            PinpadEnum.ENUM_WRITE_MODE.KEY_WRITE_DIRECT,
+            0,
+            PinpadEnum.PINPAD_NOR_KEY_TYPE.PINKEY_MASTER,
+            masterKey
+        )
+    }
+
+    /**
+     * write pinKey
+     * @param pinKey pinKey
+     */
+    private fun savePinKey(pinKey: ByteArray): Int {
+        return pinpadService.Pinpad_Write_Normal_Key(
+            PIN_KEY_INDEX,
+            PinpadEnum.ENUM_WRITE_MODE.KEY_WRITE_DECRYPT,
+            0,
+            PinpadEnum.PINPAD_NOR_KEY_TYPE.PINKEY_PIN,
+            pinKey
+        )
+    }
+
+    /**
+     * write macKey
+     * @param macKey macKey
+     */
+    private fun saveMacKey(macKey: ByteArray): Int {
+        return pinpadService.Pinpad_Write_Normal_Key(
+            MAC_KEY_INDEX,
+            PinpadEnum.ENUM_WRITE_MODE.KEY_WRITE_DECRYPT,
+            0,
+            PinpadEnum.PINPAD_NOR_KEY_TYPE.PINKEY_MAC,
+            macKey
+        )
+    }
+
+    /**
+     * write panKey
+     * @param panKey panKey
+     */
+    private fun savePanKey(panKey: ByteArray): Int {
+        return if (isPanDesMode) {
+            pinpadService.Pinpad_Write_Normal_Key(
+                PAN_KEY_INDEX,
+                PinpadEnum.ENUM_WRITE_MODE.KEY_WRITE_DECRYPT,
+                0, PinpadEnum.PINPAD_NOR_KEY_TYPE.PINKEY_DES,
+                panKey
+            )
+        } else {
+            pinpadService.Pinpad_Write_Normal_Key(
+                PAN_KEY_INDEX,
+                PinpadEnum.ENUM_WRITE_MODE.KEY_WRITE_DECRYPT,
+                0, PinpadEnum.PINPAD_NOR_KEY_TYPE.PINKEY_AES,
+                panKey
+            )
+        }
     }
 
     fun changePanUIVisibility(isShow: Boolean, text: String?) {
@@ -198,6 +414,7 @@ class CardEnrollmentActivity: ComponentActivity() {
         _LastCode = emvService.Emv_StartApp(0)
         if (EmvService.EMV_TRUE == _LastCode) {
         } else {
+            val err = ErrMsg.GetEmvErrMsg(_LastCode)
             isNoErr = false
         }
         changePanUIVisibility(false, null)
@@ -205,13 +422,26 @@ class CardEnrollmentActivity: ComponentActivity() {
             //upload offline transaction data
             pay()
         }
-//        if (processDialog!!.isShowing) {
-//            processDialog!!.dismiss()
-//        }
     }
 
     fun pay(): Boolean {
         return true
+    }
+
+    fun hexToString(hex: String): String {
+        val stringBuilder = StringBuilder()
+        var i = 0
+        while (i < hex.length) {
+            // Grab the hex in pairs
+            val hexPair = hex.substring(i, i + 2)
+            // Convert hex to decimal
+            val decimal = hexPair.toInt(16)
+            // Convert the decimal to character
+            stringBuilder.append(decimal.toChar())
+            // Move to the next pair of hex characters
+            i += 2
+        }
+        return stringBuilder.toString()
     }
 
     private var cardListener: EmvServiceListener = object : EmvServiceListener() {
@@ -264,12 +494,52 @@ class CardEnrollmentActivity: ComponentActivity() {
             return result
         }
 
-        override fun onSelectApp(p0: Array<out EmvCandidateApp>?): Int {
-            TODO("Not yet implemented")
+        override fun onSelectApp(emvCandidateApps: Array<EmvCandidateApp>): Int {
+            val appListLen = emvCandidateApps.size
+            selectAPPResult = 0
+            UIThreadisRunning = true
+            val items = arrayOfNulls<String>(appListLen)
+            for (i in 0 until appListLen) {
+                items[i] = emvCandidateApps[i].appName
+            }
+            Handler(context!!.mainLooper).post { //The first UI application is selected by default
+                selectAPPResult = emvCandidateApps[0].index.toInt()
+                val builder = android.app.AlertDialog.Builder(context)
+                    .setTitle("Please Select App")
+                    .setCancelable(false)
+                    .setSingleChoiceItems(
+                        items, 0
+                    ) { dialog, which ->
+
+                        //Set the radio list item, and select the first item by default (index is 0)
+                        //AppendDis("callback [onSelectApp] You Select \"" + items[which] + "\"")
+                        //AppendDis("callback [onSelectApp] It's appIndex is \"" + emvCandidateApps[which].index + "\"")
+                        selectAPPResult = emvCandidateApps[which].index.toInt()
+                    }
+                    .setPositiveButton(
+                        "OK"
+                    ) { dialog, which -> UIThreadisRunning = false }
+                    .setNegativeButton(
+                        "Cancel"
+                    ) { dialog, which ->
+                        UIThreadisRunning = false
+                        selectAPPResult = EmvService.ERR_USERCANCEL
+                    }
+                builder.create().show()
+            }
+            while (UIThreadisRunning) {
+                //Waiting for user confirmation
+                try {
+                    Thread.sleep(500)
+                } catch (e: InterruptedException) {
+                    e.printStackTrace()
+                }
+            }
+            return selectAPPResult
         }
 
-        override fun onSelectAppFail(p0: Int): Int {
-            TODO("Not yet implemented")
+        override fun onSelectAppFail(i: Int): Int {
+            return EmvService.EMV_TRUE
         }
 
 
@@ -277,20 +547,26 @@ class CardEnrollmentActivity: ComponentActivity() {
             var ret = 0
             var tlv = EmvTLV(0x9F06)
             emvService.Emv_GetTLV(tlv)
-            tlv = EmvTLV(0x5A)
+
+            // get card number and expiry
+            tlv = EmvTLV(0x0057)
             ret = emvService.Emv_GetTLV(tlv)
             if (EmvService.EMV_TRUE == ret) {
-                cardNum = StringUtil.bytesToHexString(tlv.Value).replace("F", "")
-            } else {
-                tlv = EmvTLV(0x57)
-                ret = emvService.Emv_GetTLV(tlv)
-                if (EmvService.EMV_TRUE == ret) {
-                    val str_57 = StringUtil.bytesToHexString(tlv.Value)
-                    cardNum = str_57.substring(0, str_57.indexOf('D'))
-                } else {
-                }
+                val str_57 = StringUtil.bytesToHexString(tlv.Value)
+                cardNum = str_57.substring(0, str_57.indexOf('D'))
+                expiry = formatDateString(str_57.split('D')[1].take(4))
             }
+
+            // get card holder name
+            tlv = EmvTLV(0x5F20)
+            ret = emvService.Emv_GetTLV(tlv)
+            if (EmvService.EMV_TRUE == ret) {
+                val value = StringUtil.bytesToHexString(tlv.Value)
+                cardHolderName = hexToString(value).split("/").joinToString(separator = " ")
+            }
+
             if (!(null == cardNum || cardNum.isEmpty())) {
+
             }
             return EmvService.EMV_TRUE
         }

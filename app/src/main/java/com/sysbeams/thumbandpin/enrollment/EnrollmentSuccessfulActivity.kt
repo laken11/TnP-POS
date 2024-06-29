@@ -28,10 +28,17 @@ class EnrollmentSuccessfulActivity: ComponentActivity() {
             startActivity(Intent(this@EnrollmentSuccessfulActivity, EnrollmentChoiceListActivity::class.java))
         }
         val bvnOrNin = intent.getStringExtra("id").toString()
-        val accounts = intent.getStringArrayExtra("accounts")
         val accessCode = SharedPreferencesHelper.retrieveObject<String>(this, "accessCode").toString()
-        val enrollment = EnrollmentRequest("BVN", bvnOrNin, null, accessCode, accounts)
-        enroll(enrollment)
+        if(intent.getStringExtra("activity") == "cardEnrollment"){
+            val enrollment = EnrollmentRequest("CARD", bvnOrNin, null, accessCode, null)
+            enroll(enrollment)
+        }
+        else{
+            val accounts = intent.getStringArrayExtra("accounts")
+            val enrollment = EnrollmentRequest("BVN", bvnOrNin, null, accessCode, accounts)
+            enroll(enrollment)
+        }
+
     }
 
     private fun enroll(request: EnrollmentRequest?){

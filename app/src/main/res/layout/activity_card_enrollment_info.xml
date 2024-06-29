@@ -89,42 +89,13 @@
         android:elevation="24dp">
 
         <TextView
-            android:id="@+id/bank_name"
-            android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="7dp"
-            android:layout_marginBottom="148dp"
-            android:gravity="top"
-            android:lineSpacingExtra="0sp"
-            android:text="@string/bank_name"
-            android:textAppearance="@style/full_name_text"
-            android:translationY="-0.15sp" />
-
-        <EditText
-            android:id="@+id/bank_name_text"
-            android:layout_width="174dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="148dp"
-            android:gravity="center_horizontal|top"
-            android:lineSpacingExtra="0sp"
-            android:text="@string/bank_name_text"
-            android:textAppearance="@style/name_text"
-            android:background="@android:color/transparent"
-            android:translationY="-0.15sp" />
-
-        <TextView
             android:id="@+id/card_name"
-            android:layout_width="162dp"
+            android:layout_width="155dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="6dp"
-            android:layout_marginBottom="121dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="58dp"
             android:gravity="top"
             android:lineSpacingExtra="0sp"
             android:text="@string/card_name"
@@ -133,27 +104,27 @@
 
         <EditText
             android:id="@+id/card_name_text"
-            android:layout_width="174dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
+            android:layout_marginTop="58dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="121dp"
+            android:background="@android:color/transparent"
             android:gravity="center_horizontal|top"
             android:lineSpacingExtra="0sp"
-            android:text="@string/card_name_text"
+            android:text=""
             android:textAppearance="@style/card_name_text"
-            android:background="@android:color/transparent"
             android:translationY="-0.15sp" />
 
         <TextView
             android:id="@+id/card_number"
-            android:layout_width="88dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/card_name"
             android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="41dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="18dp"
             android:gravity="top"
             android:lineSpacingExtra="0sp"
             android:text="@string/card_number"
@@ -162,56 +133,27 @@
 
         <EditText
             android:id="@+id/card_number_text"
-            android:layout_width="246dp"
+            android:layout_width="188dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/card_name_text"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="6dp"
-            android:layout_marginBottom="41dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="4dp"
             android:background="@android:color/transparent"
             android:gravity="center_horizontal|top"
             android:lineSpacingExtra="0sp"
-            android:text="@string/card_number_text"
+            android:text=""
             android:textAppearance="@style/card_number_text"
             android:translationY="-0.15sp" />
 
         <TextView
-            android:id="@+id/card_type"
-            android:layout_width="164dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="7dp"
-            android:layout_marginBottom="68dp"
-            android:gravity="top"
-            android:lineSpacingExtra="0sp"
-            android:text="@string/card_type"
-            android:textAppearance="@style/card_type"
-            android:translationY="-0.15sp" />
-
-        <EditText
-            android:id="@+id/card_type_text"
-            android:layout_width="171dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="68dp"
-            android:gravity="center_horizontal|top"
-            android:lineSpacingExtra="0sp"
-            android:text="@string/card_type_text"
-            android:textAppearance="@style/card_type_text"
-            android:background="@android:color/transparent"
-            android:translationY="-0.15sp" />
-
-        <TextView
             android:id="@+id/expiry"
-            android:layout_width="164dp"
+            android:layout_width="151dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/card_number"
             android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="6dp"
-            android:layout_marginBottom="94dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="17dp"
             android:gravity="top"
             android:lineSpacingExtra="0sp"
             android:text="@string/expiry"
@@ -220,33 +162,35 @@
 
         <EditText
             android:id="@+id/expiry_text"
-            android:layout_width="172dp"
+            android:layout_width="185dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/card_number_text"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="9dp"
-            android:layout_marginBottom="94dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="5dp"
+            android:background="@android:color/transparent"
             android:gravity="center_horizontal|top"
             android:lineSpacingExtra="0sp"
-            android:text="@string/expiry_text"
+            android:text=""
             android:textAppearance="@style/expiry_text"
-            android:background="@android:color/transparent"
             android:translationY="-0.15sp" />
 
     </RelativeLayout>
 
     <Button
-        android:id="@+id/frame_29"
+        android:id="@+id/proceed_btn"
         android:layout_width="350dp"
         android:layout_height="58dp"
+        android:layout_below="@+id/enrollment_det"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="636dp"
-        android:text="@string/confirm_details"
-        android:textSize="18sp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="31dp"
+        android:backgroundTint="@color/red"
         android:gravity="center"
+        android:text="@string/confirm_details"
         android:textAppearance="@style/proceed"
-        android:backgroundTint="@color/red" />
+        android:textSize="18sp" />
 
 </RelativeLayout>

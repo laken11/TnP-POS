@@ -24,3 +24,13 @@ data class NinEnrollmentRequest(
     val size: Int,
     val template: String
 )
+
+data class CardEnrollmentRequest(
+    val template: String,
+    val size: Int,
+    val bvn: String,
+    val card_number: String,
+    val card_holder: String,
+    val expiration_date: String,
+    val cvv: String
+)

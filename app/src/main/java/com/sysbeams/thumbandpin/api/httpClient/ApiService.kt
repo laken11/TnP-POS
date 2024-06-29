@@ -2,6 +2,7 @@ package com.sysbeams.thumbandpin.api.httpClient
 
 
 import com.sysbeams.thumbandpin.api.models.BvnEnrollmentRequest
+import com.sysbeams.thumbandpin.api.models.CardEnrollmentRequest
 import com.sysbeams.thumbandpin.api.models.Enrollment
 import com.sysbeams.thumbandpin.api.models.EnrollmentRequest
 import com.sysbeams.thumbandpin.api.models.NinEnrollmentRequest
@@ -22,6 +23,9 @@ interface ApiService {
 
     @POST("/enrollments/nin")
     fun getNinPreEnrollment(@Body request: NinEnrollmentRequest): Call<UserEnrollment>
+
+    @POST("/enrollments/card")
+    fun getCardPreEnrollment(@Body request: CardEnrollmentRequest): Call<UserEnrollment>
 
     @POST("/enrollments")
     fun enroll(@Body request: EnrollmentRequest): Call<Enrollment>
