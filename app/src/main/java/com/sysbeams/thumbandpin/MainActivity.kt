@@ -5,8 +5,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.activity.ComponentActivity
 import com.sysbeams.thumbandpin.enrollment.EnrollmentChoiceListActivity
-import com.telpo.tps550.api.printer.StyleConfig
-import com.telpo.tps550.api.printer.ThermalPrinter
+import com.sysbeams.thumbandpin.transaction.TransactionChoiceListActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,15 +17,7 @@ class MainActivity : ComponentActivity() {
             startActivity(Intent(this, EnrollmentChoiceListActivity::class.java))
         }
         transactionBtn.setOnClickListener{
-            // print()
-            startActivity(Intent(this, EnrollmentChoiceListActivity::class.java))
-        }
-    }
-    private fun print(){
-        try {
-            ThermalPrinter.start(this)
-        }catch (e: Exception) {
-            print("Printing failed: $e");
+            startActivity(Intent(this, TransactionChoiceListActivity::class.java))
         }
     }
 

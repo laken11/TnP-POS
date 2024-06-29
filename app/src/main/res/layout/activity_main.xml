@@ -91,7 +91,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="11dp"
                 android:lineSpacingExtra="3sp"
-                android:text="@string/transaction"
+                android:text="Transaction"
                 android:textAlignment="center"
                 android:textAppearance="@style/transaction" />
         </RelativeLayout>

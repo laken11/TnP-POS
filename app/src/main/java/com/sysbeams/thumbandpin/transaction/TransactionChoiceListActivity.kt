@@ -1,5 +1,6 @@
-package com.sysbeams.thumbandpin.transacrion
+package com.sysbeams.thumbandpin.transaction
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.RelativeLayout
 import androidx.activity.ComponentActivity
@@ -15,15 +16,15 @@ class TransactionChoiceListActivity: ComponentActivity()  {
         val walletTransaction: RelativeLayout = findViewById(R.id.wallet_transaction)
 
         bankTransaction.setOnClickListener {
-
+            startActivity(Intent(this@TransactionChoiceListActivity, FingerprintAuthenticationActivity::class.java))
         }
 
         cardTransaction.setOnClickListener {
-
+            startActivity(Intent(this@TransactionChoiceListActivity, FingerprintAuthenticationActivity::class.java))
         }
 
         walletTransaction.setOnClickListener {
-
+            startActivity(Intent(this@TransactionChoiceListActivity, FingerprintAuthenticationActivity::class.java))
         }
 
 

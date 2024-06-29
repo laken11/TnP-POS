@@ -77,6 +77,72 @@
             android:theme="@style/Theme.ThumbAndPin" />
 
         <activity
+            android:name=".transaction.bank.TransactionAmountInputActivity"
+            android:exported="false"
+            android:label="TransactionAmountInputActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
+            android:name=".transaction.bank.TransactionBankChoiceListActivity"
+            android:exported="false"
+            android:label="TransactionBankChoiceListActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
+            android:name=".transaction.bank.TransactionBankDetailsActivity"
+            android:exported="false"
+            android:label="TransactionBankDetailsActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
+            android:name=".transaction.TransactionReceiptActivity"
+            android:exported="false"
+            android:label="TransactionReceiptActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
+            android:name=".transaction.TransactionSuccessfulActivity"
+            android:exported="false"
+            android:label="TransactionSuccessfulActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
+            android:name=".transaction.FingerprintAuthenticationActivity"
+            android:exported="false"
+            android:label="FingerprintAuthenticationActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
+            android:name=".transaction.TransactionChoiceListActivity"
+            android:exported="false"
+            android:label="FingerprintAuthenticationActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
+            android:name=".transaction.TransactionUnsuccessfulActivity"
+            android:exported="false"
+            android:label="FingerprintAuthenticationActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
+            android:name=".transaction.card.TransactionCardAmountInputActivity"
+            android:exported="false"
+            android:label="TransactionCardAmountInputActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
+            android:name=".transaction.card.TransactionCardDetailsActivity"
+            android:exported="false"
+            android:label="TransactionCardDetailsActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
+            android:name=".transaction.wallet.TransactionWalletInputActivity"
+            android:exported="false"
+            android:label="TransactionWalletInputActivity"
+            android:theme="@style/Theme.ThumbAndPin" />
+
+        <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login"
